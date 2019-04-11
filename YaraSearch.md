@@ -4,6 +4,10 @@ This Ghidra script provides a YARA search.
 It will place a `PRE_COMMENT` at the location of each match.
 It will set bookmarks for each match.
 
+## Dependencies
+
+- `yara` must by in `$PATH`; you can get `yara` here: https://github.com/VirusTotal/yara
+
 ## Issues
 
 - If matches are found in code which are not at instruction boundaries a comment can not be set; bookmark for match is still set, though

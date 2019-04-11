@@ -4,9 +4,17 @@ A collection of some useful Ghidra scripts I come up with.
 This is a personal repository. So while you can open issues,
 I won't guarantee any bug fixes, improvements, etc.
 
+Scripts only tested with CentOS 7.
+
 ## Documentation
 
 Each script has a `.md` file with its documentation.
+
+## Dependencies
+
+- pipeDecoder.py: none (that I know of)
+- YaraSearch.py: If matches are found in code which are not at instruction boundaries a comment can not be set; bookmark for match is still set, though
+
 
 ## Install
 
