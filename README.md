@@ -14,3 +14,7 @@ Copy the script(s) (you like to use) to your `ghidra_scripts` folder (usually lo
 at `~/ghidra_scripts`) or any other directory Ghidra is configured to search for
 scripts.
 
+## Acknowledgments
+
+All development powered via [curl cheat.sh/python/](https://cheat.sh/python/).
+
