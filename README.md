@@ -14,7 +14,7 @@ Each script has a `.md` file with its documentation.
 
 - pipeDecoder.py: none (that I know of)
 - YaraSearch.py: `yara` must be in `$PATH`
-
+- RC4Decrypter.py: none (that I know of)
 
 ## Install
 
