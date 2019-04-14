@@ -43,7 +43,7 @@ for r in ranges:
 	status = "Processing selection: " + r.toString()
 	print "[+] " + status
 
-	try;
+	try:
 		bytes = getBytes(begin,length)
 	except MemoryAccessException as e:
 		print "[!] FAILED: " + str(e)
@@ -80,7 +80,7 @@ for r in ranges:
 			comment += command + "\n"
 			comment += stderr + "\n"
 			comment += "[send: " + hex(len(bytes)) + ", decoded: " + hex(len(bytes_decoded)) + "]"
-			cu.setComment(CodeUnit.COMMENT_STYLE, comment)
+			cu.setComment(COMMENT_STYLE, comment)
 			print "[$] SUCCESS"
 		except MemoryAccessException as e:
 			print "[!] FAILED: " + str(e)

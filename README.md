@@ -13,7 +13,7 @@ Each script has a `.md` file with its documentation.
 ## Dependencies
 
 - pipeDecoder.py: none (that I know of)
-- YaraSearch.py: If matches are found in code which are not at instruction boundaries a comment can not be set; bookmark for match is still set, though
+- YaraSearch.py: `yara` must be in `$PATH`
 
 
 ## Install
