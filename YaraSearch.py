@@ -46,8 +46,7 @@ for r in ranges:
 		tmp.write(bytes)
 		tmp.close()
 
-		command = "yara " + rule_file + " -gs " + tmp.name
-		p = Popen(command, stdout=PIPE, stderr=PIPE, shell=True, bufsize=PIPE_BUFFER_SIZE)
+		p = Popen(['yara', rule_file, "-gs", tmp.name], stdout=PIPE, stderr=PIPE, bufsize=PIPE_BUFFER_SIZE)
 		stdout, stderr = p.communicate()
 	finally:
 		os.unlink(tmp.name)
