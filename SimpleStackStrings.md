@@ -1,12 +1,22 @@
 # SimpleStackStrings.py
 
 Reasemble an ASCII stack string fromed via repeated instructions of:
+
 ```
 MOV dword ptr [0xffffff6c + EBP],0x70747468
 MOV dword ptr [0xffffff70 + EBP],0x2f2f3a73
 MOV dword ptr [0xffffff78 + EBP],0x66746f68
 ...
 ```
+
+or
+
+```
+MOV byte ptr [EBP + 0x10],0x68
+MOV byte ptr [EBP + 0x11],0x74
+MOV byte ptr [EBP + 0x12],0x74
+```
+
 
 Set current address to beginning of first instruction of above stack string code segment.
 The script will write the assembled string as a comment.

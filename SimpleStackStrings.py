@@ -4,6 +4,13 @@
 # MOV dword ptr [0xffffff78 + EBP],0x66746f68
 # ...
 #
+# OR
+# 
+# MOV byte ptr [EBP + 0x10],0x68
+# MOV byte ptr [EBP + 0x11],0x74
+# MOV byte ptr [EBP + 0x12],0x68
+# ...
+#
 # Set current address to beginning of first instruction of above stack string code segment.
 # The script will write the assembled string as a comment.
 #
@@ -26,11 +33,12 @@ listing = currentProgram.getListing()
 stack_str = ""
 inst = getInstructionAt(currentAddress)
 
-while inst.getScalar(1):
+while inst and inst.getScalar(1):
 	value = inst.getScalar(1).value
 	stack_str_part = ""
-	for i in range(4):
-		stack_str_part += chr(value>>8*i&0xff)
+	while value > 0:
+		stack_str_part += chr(value&0xff)
+		value = value>>8
 
 	stack_str += stack_str_part
 	print hex(value) + ": \"" + stack_str_part + "\" of \"" + stack_str + "\""
