@@ -36,6 +36,7 @@ inst = getInstructionAt(currentAddress)
 while inst and inst.getScalar(1):
 	value = inst.getScalar(1).value
 	stack_str_part = ""
+	# FIXME: here is a bug: null bytes are dropped :/
 	while value > 0:
 		stack_str_part += chr(value&0xff)
 		value = value>>8
