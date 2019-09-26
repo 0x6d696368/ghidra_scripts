@@ -12,17 +12,14 @@ Each script has a `.md` file with its documentation.
 
 ## Dependencies
 
-- pipeDecoder.py: none (that I know of)
 - YaraSearch.py: `yara` must be in `$PATH`
-- RC4Decrypter.py: none (that I know of)
+- GoogleSearch.py: Needs `firefox` in `$PATH`
+
+For details please see each script's `.md` file.
 
 ## Install
 
 Copy the script(s) (you like to use) to your `ghidra_scripts` folder (usually located
 at `~/ghidra_scripts`) or any other directory Ghidra is configured to search for
 scripts.
-
-## Acknowledgments
-
-All development powered via [curl cheat.sh/python/](https://cheat.sh/python/).
 
