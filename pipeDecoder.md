@@ -14,6 +14,13 @@ It will place a `PRE_COMMENT` at the location it was invoked (overwriting any pr
 `pipeDecoder.py` can be used with programs that accept the data to be decoded via
 `stdin` and output the decoded data to `stdout`.
 
+A template demonstrating how such a program would look like can be seen in `pipeDecoderTemplate.c`.
+This template can be used to execute short decompiled code snippets, such as decoding functions.
+It requires that you export the BuiltInTypes Data Type Archive of the program you copy the
+decompiled code from, into the same directory as `pipeDecoderTemplate.c` as `BuiltInTypes.h` (default name assigned by Ghidra
+when exporting the  BuiltInTypes Data Type Archive as a C header). The template can
+then be build via `make pipeDecoderTemplate`.
+
 ### Example:
 
 Generate test data:
