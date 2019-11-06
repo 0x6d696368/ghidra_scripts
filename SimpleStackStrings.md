@@ -1,6 +1,6 @@
 # SimpleStackStrings.py
 
-Reasemble an ASCII stack string fromed via repeated instructions of:
+Reasemble an ASCII stack string formed via repeated instructions of:
 
 ```
 MOV dword ptr [0xffffff6c + EBP],0x70747468
@@ -19,7 +19,7 @@ MOV byte ptr [EBP + 0x12],0x74
 
 
 Set current address to beginning of first instruction of above stack string code segment.
-The script will write the assembled string as a comment.
+The script will write the assembled string as a comment (**overwriting any existing comments**).
 
 The script only considers what is in the source scalar, i.e. the `0x70747468` parts on the right of the comma.
 The left side is irrelevant. Hence this also works on different constructs but this also causes issues (see [Issues]).

@@ -1,4 +1,4 @@
-#Reasemble an ASCII stack string fromed via repeated instructions of:
+#Reasemble an ASCII stack string formed via repeated instructions of:
 # MOV dword ptr [0xffffff6c + EBP],0x70747468
 # MOV dword ptr [0xffffff70 + EBP],0x2f2f3a73
 # MOV dword ptr [0xffffff78 + EBP],0x66746f68
@@ -20,7 +20,7 @@
 #@author 
 #@category
 #@keybinding 
-#@menupath 
+#@menupath Tools.Decoders.Simple Stack Strings
 #@toolbar 
 
 from ghidra.program.model.listing import CodeUnit

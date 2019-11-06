@@ -23,3 +23,10 @@ Copy the script(s) (you like to use) to your `ghidra_scripts` folder (usually lo
 at `~/ghidra_scripts`) or any other directory Ghidra is configured to search for
 scripts.
 
+
+## TODO
+
+- Make `SearchStackStrings.py` call `StackStrings.py` internally.
+- Improve `StackStrings.py` to handle different and more complex strack strings.
+
+
