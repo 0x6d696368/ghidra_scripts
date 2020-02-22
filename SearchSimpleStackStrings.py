@@ -35,8 +35,11 @@ def try_reassemble_stackstring(address):
 	ascii = 0
 	nonzero = 0
 	total = 0
-	while inst and inst.getScalar(1):
-		value = inst.getScalar(1).value
+	while inst and (inst.getScalar(1) or inst.getScalar(0)):
+		if inst.getScalar(1) == None:
+			value = inst.getScalar(0).value
+		else:
+			value = inst.getScalar(1).value
 		stack_str_part = ""
 		# FIXME: here is a bug: null bytes are dropped :/
 		while value > 0:
@@ -86,7 +89,7 @@ for symbol in symbolTable.getAllSymbols(False):
 	iter = func.getProgram().getListing().getCodeUnits(func.getBody(), True)
 	skip = 0
 	for i in iter:
-		if skip<=0 and i.getScalar(1):
+		if skip<=0 and (i.getScalar(1) or i.getScalar(0)):
 			skip = try_reassemble_stackstring(i.getAddress())
 		skip -= 1
 

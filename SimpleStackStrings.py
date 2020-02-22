@@ -33,8 +33,11 @@ listing = currentProgram.getListing()
 stack_str = ""
 inst = getInstructionAt(currentAddress)
 
-while inst and inst.getScalar(1):
-	value = inst.getScalar(1).value
+while inst and (inst.getScalar(1) or inst.getScalar(0)):
+	if inst.getScalar(1) == None:
+		value = inst.getScalar(0).value
+	else:
+		value = inst.getScalar(1).value
 	stack_str_part = ""
 	# FIXME: here is a bug: null bytes are dropped :/
 	while value > 0:
